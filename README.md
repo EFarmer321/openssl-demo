@@ -22,4 +22,4 @@ make install
 cd ../..
 ```
 
-Running `make`
+Now in the repository, run `make client`
