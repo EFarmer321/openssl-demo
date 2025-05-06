@@ -1,6 +1,6 @@
 COMPILER = /mingw64/bin/g++
-COMPILER_FLAGS = -Wall -I./openssl/include
-LIBRARY_FLAGS = -L./openssl -lssl -lcrypto -lws2_32 -lcrypt32 -ladvapi32
+COMPILER_FLAGS = -Wall -I./lib/openssl/include
+LIBRARY_FLAGS = -L./lib/openssl -lssl -lcrypto -lws2_32 -lcrypt32 -ladvapi32
 LIB_FILES = utils.cpp
 
 server:

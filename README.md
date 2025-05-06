@@ -22,4 +22,4 @@ make install
 cd ../..
 ```
 
-Now in the repository, run `make client`
+Now in the repository, run `make all` to produce the necessary exe files.
