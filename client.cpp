@@ -55,8 +55,7 @@ int main() {
       }
     }
 
- 
-
-
+    WSACleanup();
+    
     return EXIT_SUCCESS;
 }
