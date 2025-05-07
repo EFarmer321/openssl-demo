@@ -39,11 +39,23 @@ int main() {
 
     std::cout << "Handshake.\n";
 
-    const char* message = "Hello, world!\n";
+    while (true)
+    {
+      std::cout << "Type in a message to send to the server. Type `quit` to quit: ";
+      std::string message = Utils::read_string();
 
-    if (SSL_write(ssl_object, message, strlen(message)) <= 0) {
-      std::cerr << "SSWL_write failed!";
+      if (message == "quit") {
+        break;
+      }
+      else {
+        if (SSL_write(ssl_object, message.c_str(), strlen(message.c_str())) <= 0) {
+          std::cerr << "SSWL_write failed!";
+          break;
+        }
+      }
     }
+
+ 
 
 
     return EXIT_SUCCESS;

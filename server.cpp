@@ -38,6 +38,9 @@ int main() {
            sizeof(struct sockaddr_in)) == -1) {
     std::cout << "Failed to bind!\n";
     WSACleanup();
+    while (true) {
+
+    }
     return EXIT_FAILURE;
   };
 
@@ -74,16 +77,19 @@ int main() {
   SSL_accept(ssl_object);
   std::cout << "Accepted the handshake!\n";
 
-  char buffer[500] = {};
+  while (true) {
+    char buffer[500] = {};
 
-  if (SSL_read(ssl_object, buffer, sizeof(buffer)) > 0)
-  {
-    std::cout << "Client message: " << std::string(buffer) << "\n";
+    if (SSL_read(ssl_object, buffer, sizeof(buffer)) > 0)
+    {
+      std::cout << "Client message: " << std::string(buffer) << "\n";
+    }
+    else
+    {
+      std::cerr << "Failed to call SSL_read!\n";
+    }
   }
-  else
-  {
-    std::cerr << "Failed to call SSL_read!\n";
-  }
+
 
   SSL_shutdown(ssl_object);
   SSL_free(ssl_object);
