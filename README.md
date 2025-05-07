@@ -11,7 +11,7 @@ A basic demonstration of openssl made for the Computer Networks, reuploaded and 
 
 ### Steps
 
-1. When cloning this repository, use `++` to include the `openssl` submodule.
+1. When cloning this repository, use `git clone https://github.com/EFarmer321/openssl-demo.git --recursive` to include the `openssl` submodule.
 2. Create a folder named openssl-build inside the openssl folder.
 3. Open up MSYS2 MINGW64 and run the following:
 
