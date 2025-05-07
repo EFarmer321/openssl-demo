@@ -4,19 +4,20 @@ A basic demonstration of openssl made for the Computer Networks, reuploaded and 
 
 ### Requirements
 
-- MSYS2 MINGW64. ?Below dependencies should be installed with the terminal:
+- MSYS2 MINGW64. Below dependencies should be installed with the terminal:
 - Perl
 - Make
 - GCC
 
 ### Steps
 
-1. When cloning this repository, use `git clone https://github.com/EFarmer321/openssl-demo.git --recursive` to include the `openssl` submodule.
-2. Open up MSYS2 MINGW64 and run the following:
+1. When cloning this repository, use `++` to include the `openssl` submodule.
+2. Create a folder named openssl-build inside the openssl folder.
+3. Open up MSYS2 MINGW64 and run the following:
 
 ```
 cd lib/openssl
-perl Configure mingw64 no-shared no-asm --prefix=$(realpath../openssl-build)
+perl Configure mingw64 no-shared no-asm --prefix=$(realpath ../openssl-build)
 make -j$(nproc)
 make install
 cd ../..
