@@ -5,9 +5,10 @@ A basic demonstration of openssl made for the Computer Networks, reuploaded and 
 ### Requirements
 
 - MSYS2 MINGW64. Below dependencies should be installed with the terminal:
-- Perl
-- Make
-- GCC
+    - Perl
+    - Make
+    - GCC
+    - mingw-w64-x86_64-openssl
 
 ### Steps
 
