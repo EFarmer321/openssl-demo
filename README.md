@@ -12,15 +12,6 @@ A basic demonstration of openssl made for the Computer Networks, reuploaded and 
 ### Steps
 
 1. When cloning this repository, use `git clone https://github.com/EFarmer321/openssl-demo.git` to include the `openssl` submodule.
-2. Create a folder named openssl-build inside the openssl folder.
-3. Open up MSYS2 MINGW64 and run the following:
-
-```
-cd lib/openssl
-perl Configure mingw64 no-shared no-asm --prefix=$(realpath ../openssl-build)
-make -j$(nproc)
-make install
-cd ../..
-```
+2. Generate a self-certificate named `server.crt` and a private key `server.pem`. Here's an example: `openssl req -newkey rsa:2048 -out server.crt -keyout server.pem -days 365 -nodes -x509`
 
 Now in the repository, run `make all` to produce the necessary exe files.
