@@ -60,6 +60,9 @@ int main() {
       }
     }
 
+    SSL_shutdown(ssl_object);
+    SSL_free(ssl_object);
+    SSL_CTX_free(context);
     closesocket(server_socket);
     WSACleanup();
     
