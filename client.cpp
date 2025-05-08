@@ -17,6 +17,12 @@ int main() {
       return EXIT_FAILURE;
     }
 
+    if (!OPENSSL_init_ssl(OPENSSL_INIT_LOAD_SSL_STRINGS, NULL)) {
+      std::cerr << "Failed to initialize OpenSSL!\n";
+      WSACleanup();
+      return EXIT_FAILURE;
+    };  
+
     std::cout << "Enter a port number\n";
     int port_num;
     std::cin >> port_num;
@@ -28,7 +34,6 @@ int main() {
 
     const SSL_METHOD *method = TLS_client_method();
     SSL_CTX *context = SSL_CTX_new(method);
-    SSL_CTX_use_PrivateKey_file(context, "server.pem", SSL_FILETYPE_PEM);
 
     SOCKET server_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     connect(server_socket, (sockaddr*) &socket_name, sizeof(struct sockaddr_in));
