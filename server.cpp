@@ -87,6 +87,7 @@ int main() {
     else
     {
       std::cerr << "Failed to call SSL_read!\n";
+      break;
     }
   }
 
