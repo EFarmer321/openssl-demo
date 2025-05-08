@@ -55,7 +55,7 @@ int main() {
       }
     }
 
-    closesocket(server_socket)
+    closesocket(server_socket);
     WSACleanup();
     
     return EXIT_SUCCESS;
